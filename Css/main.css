@@ -1,0 +1,145 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --main-color: #3566ff;
+}
+
+.parent {
+    background-color: #a5e0ff;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.parent::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background: #eee; */
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+
+.parent .image h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0 auto 35px;
+    padding: 20px 0 0 0;
+    color: #444444;
+    position: relative;
+    width: fit-content;
+}
+
+.parent .image h2::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -40px;
+    border: 5px solid var(--main-color);
+    border-radius: 50%;
+}
+
+.parent .image h2::after {
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10;
+    height: 10px;
+    border: 5px solid #011188;
+    left: -27px;
+    bottom: -4px;
+    opacity: 0.8;
+}
+
+.parent .info h1 {
+    color: #444444;
+    max-width: 200px;
+    margin: 20px auto;
+}
+
+@media (min-width:768px) {
+    .parent .info h1 {
+        max-width: 300px;
+        font-size: 40px;
+    }
+}
+
+.parent .info .head {
+    color: #444444;
+    max-width: 300px;
+    margin: 30px auto 115px;
+    line-height: 1.6;
+    font-size: 21px;
+    position: relative;
+}
+
+.parent .info p::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: var(--main-color);
+    left: 5px;
+    bottom: -60px;
+}
+
+.parent h1 {
+    color: #444444;
+    font-size: 25px;
+    margin-bottom: 50px;
+}
+
+.parent .boxs .box {
+    padding: 20px;
+}
+
+.parent .boxs .box img {
+    max-width: 100%;
+}
+
+@media(min-width:768px) {
+    .parent .boxs .box img {
+        max-width: 600px;
+    }
+}
+
+.parent .boxs .box .reco {
+    max-width: 312px;
+    text-align: left;
+    font-size: 20px;
+    padding: 0;
+    margin: 10px auto;
+    font-weight: bold;
+    color: #444444;
+    line-height: 1.5;
+}
+
+.parent .boxs .box a {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+    color: hwite;
+    color: white;
+    background: #011188;
+    margin: 25px auto;
+    padding: 20px 105px;
+    border-radius: 40px;
+    font-weight: bold;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+.parent .boxs .box a:hover {
+    background-color: transparent;
+    border: 1px solid var(--main-color);
+    color: #011188;
+}
